@@ -28,5 +28,10 @@ The specific formula used to determine the amount of liquidity tokens minted is 
 ## Problem 5
 What is a sandwich attack, and how might it impact you when initiating a swap?
 
-> Solution
+A sandwich attack is a form of market manipulation where an attacker exploits a victim's high slippage tolerance, often found in large transactions on decentralized exchanges (DEXes).
+First Transaction (Front-Running): The attacker places a large buy order just before the victim's transaction. In AMM platforms like Uniswap V2, this buy order increases the token price due to the way prices are adjusted based on the token ratios in the liquidity pool.
+Victim's Transaction: As a result of the increased price, the victim's transaction executes at a less favorable rate. They end up receiving fewer tokens than anticipated, exacerbated by their high slippage setting.
+Second Transaction (Back-Running): Finally, the attacker sells the tokens they initially purchased. This sale often reduces the token price back to its original level or lower, enabling the attacker to profit from the price discrepancies between these transactions. Eventually, the victim suffers a financial loss by buying high and/or selling low, while the attacker benefits from the price difference created by this sequence of transactions.
+
+
 
