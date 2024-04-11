@@ -23,7 +23,7 @@ By subtracting a minimum liquidity requirement, Uniswap V2 ensures that LPs are 
 ## Problem 4
 Investigate the minting function in the UniswapV2Pair contract. When depositing tokens (not for the first time), liquidity can only be obtained using a specific formula. What is the intention behind this?
 
-> Solution
+The specific formula used to determine the amount of liquidity tokens minted is based on the constant product invariant formula employed by Uniswap V2. This formula ensures that the product of the reserve amounts of the two tokens in the pool remains constant before and after the liquidity addition. The intention behind this formula is to maintain the integrity of the automated market maker mechanism and prevent arbitrage opportunities.
 
 ## Problem 5
 What is a sandwich attack, and how might it impact you when initiating a swap?
