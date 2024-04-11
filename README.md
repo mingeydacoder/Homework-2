@@ -10,7 +10,8 @@ Provide your profitable path, the amountIn, amountOut value for each swap, and y
 ## Problem 2
 What is slippage in AMM, and how does Uniswap V2 address this issue? Please illustrate with a function as an example.
 
-It refers to the price difference between the expected price of a trade and the actual price at which the trade is confirmed on the blockchain.In the Automated Market Maker (AMM) model, the price of an asset is determined by the ratio of tokens in the pool, so when a trader places an order, it will decrease the ratio of one token to another, increasing the price of the token. This type of slippage is unavoidable in decentralized exchanges.
+Slippage in Automated Market Makers (AMMs) refers to the difference between the expected price of a trade and the actual price at which the trade is executed. This occurs because as trades are made, the pool's reserves change, affecting the price. In other words, slippage is the cost incurred due to the lack of liquidity in the pool.
+Uniswap V2 addresses this issue through the implementation of a mathematical formula that adjusts the price based on the size of the trade relative to the liquidity available in the pool. This formula ensures that larger trades experience more slippage compared to smaller trades, which discourages large trades that could potentially cause significant price fluctuations.
 
 
 
