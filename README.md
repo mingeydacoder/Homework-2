@@ -11,7 +11,13 @@ Provide your profitable path, the amountIn, amountOut value for each swap, and y
 What is slippage in AMM, and how does Uniswap V2 address this issue? Please illustrate with a function as an example.
 
 Slippage in Automated Market Makers (AMMs) refers to the difference between the expected price of a trade and the actual price at which the trade is executed. This occurs because as trades are made, the pool's reserves change, affecting the price. In other words, slippage is the cost incurred due to the lack of liquidity in the pool.
-Uniswap V2 addresses this issue through the implementation of a mathematical formula that adjusts the price based on the size of the trade relative to the liquidity available in the pool. This formula ensures that larger trades experience more slippage compared to smaller trades, which discourages large trades that could potentially cause significant price fluctuations.
+Uniswap V2 addresses or mitigates the issue of slippage through its unique constant product formula x*y=k, where x and y represent the quantities of the two tokens in the trading pair, and k is a constant value. This formula ensures that the value of the asset pool remains unchanged before and after the trade, thereby enhancing the liquidity and stability of the market.
+Assume the asset pool contains 1000 units of token A and 1000 units of token B, i.e., x=1000, y=1000, thus k=x*y=1000000. Now, suppose someone wants to exchange 100 units of token A for token B, we can calculate the new quantities after the trade and the actual amount of token B received.
+x*y=k, we can calculate the situation after the trade as follows:
+
+* The quantity of token A after the exchange becomes 1100 units.
+* The quantity of token B after the exchange is approximately 909.09 units.
+* Therefore, the actual amount of token B received is approximately 90.91 units.
 
 ## Problem 3
 Please examine the mint function in the UniswapV2Pair contract. Upon initial liquidity minting, a minimum liquidity is subtracted. What is the rationale behind this design?
