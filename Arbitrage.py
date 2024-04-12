@@ -15,7 +15,7 @@ for pair, data in liquidity.items():
     token_pair = pair[0], pair[1]
     liquidity_amount = data[0]
     tokenB_amount = data[1]
-    print(f"交易對: {token_pair}, ", data[1]/data[0], data[0]/data[1])
+    #print(f"交易對: {token_pair}, ", data[1]/data[0], data[0]/data[1])
 
 tokens = ["tokenA", "tokenB", "tokenC", "tokenD", "tokenE"]
 liquidity_matrix = [[0 for _ in range(5)] for _ in range(5)]
@@ -38,6 +38,7 @@ for i in range(5):
 max_value = max(result)
 max_index = result.index(max_value)
 path.append(max_index)
+print(max_value)
 
 for j in range(5):
     result[j] = (997 * max_value * liquidity_matrixa[max_index][j][0]) / (1000 * liquidity_matrixa[max_index][j][1] + 997 * max_value)
@@ -48,6 +49,7 @@ if max_index == 1: #跑回B
     max_value = max(result)
     max_index = result.index(max_value)
 path.append(max_index)
+print(max_value)
 
 for k in range(5):
     result[k] = (997 * max_value * liquidity_matrixa[max_index][k][0]) / (1000 * liquidity_matrixa[max_index][k][1] + 997 * max_value)
@@ -58,6 +60,7 @@ if max_index == 1: #跑回B
     max_value = max(result)
     max_index = result.index(max_value)
 path.append(max_index)
+print(max_value)
 
 for l in range(5):
     result[l] = (997 * max_value * liquidity_matrixa[max_index][1][0]) / (1000 * liquidity_matrixa[max_index][1][1] + 997 * max_value)
@@ -67,6 +70,7 @@ if max_index == 1: #跑回B
     result[max_index] = 0
     max_value = max(result)
     max_index = result.index(max_value)
+print(max_value)
 
 #print(path)
 #print(result)
@@ -75,7 +79,7 @@ mapping = {0: 'tokenA', 1: 'tokenB', 2: 'tokenC', 3: 'tokenD', 4: 'tokenE'}
 
 # Applying the mapping to the example list
 mapped_list = [mapping[number] for number in path]
-print(mapped_list)
+#print(mapped_list)
 print('path: tokenB ->',mapped_list[0],'->',mapped_list[1],'->',mapped_list[2],'-> tokenB, tokenB balance =',result[0])
 
 '''
